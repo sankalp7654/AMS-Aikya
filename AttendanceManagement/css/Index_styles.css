@@ -1,0 +1,16 @@
+/*
+ Styles specific to index.html
+*/
+
+.head-text {
+    padding-left: 1%
+}
+
+.info-text {
+    text-align: center;
+}
+
+.btn-wrapper {
+    text-align: center;
+    padding-bottom: 5%
+}

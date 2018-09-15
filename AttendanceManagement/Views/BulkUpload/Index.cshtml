@@ -1,0 +1,116 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_APLayout.cshtml";
+}
+
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bulk Upload</title>
+    <meta name="description" content="Sufee Admin - HTML5 Admin Template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="apple-icon.png">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="~/assets/css/normalize.css">
+    <link rel="stylesheet" href="~/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/assets/css/themify-icons.css">
+    <link rel="stylesheet" href="~/assets/css/flag-icon.min.css">
+    <link rel="stylesheet" href="~/assets/css/cs-skin-elastic.css">
+    <!-- <link rel="stylesheet" href="assets/css/bootstrap-select.less"> -->
+    <link rel="stylesheet" href="~/assets/scss/style.css">
+    <link href="~/assets/css/lib/vector-map/jqvmap.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
+</head>
+
+<body>
+
+    @using (Html.BeginForm("UploadExcel", "BulkUpload", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+
+
+        <div id="right-panel" class="right-panel">
+
+            <!-- Header-->
+            <header id="header" class="header">
+
+                <div class="header-menu">
+                    <div class="col-sm-7">
+
+                        <h2 style="text-align: right;">  <img style="width: 7%; margin-right: 3% " src="~/assets/images/logos.png" /> Aikya Software Wing </h2>
+
+                    </div>
+
+                </div>
+
+            </header><!-- /header -->
+            <!-- Header-->
+
+          
+            <div class="breadcrumbs">
+                    <div class="page-header float-left">
+                        <div class="page-title">
+                            <h1>ADD / Bulk Upload</h1>
+                        </div>
+                    </div>
+                
+            </div>
+            <div class="content mt-3">
+                <div class="animated fadeIn">
+
+
+
+                    <div class="col-lg-1"> </div>
+                    <div class="col-lg-10 ">
+                        <div class="card">
+                            <div class="card-header">
+                                <strong>Bulk Upload Using Excel File</strong>
+                            </div>
+                            <div class="card-body card-block form-group">
+
+                                <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+
+                                    <div class="row form-group">
+                                        <div class="col col-md-3"><label for="file-input" class=" form-control-label">File input</label></div>
+                                        <div class="col-12 col-md-9"><input type="file" id="file-input" name="file-input" class="form-control-file"></div>
+                                    </div>
+
+                                </form>
+                            </div>
+                            <div class="card-footer form-group">
+                                <button type="submit" class="btn btn-primary btn-sm">
+                                    <i class="fa fa-dot-circle-o"></i> Upload 
+                                </button>
+                            
+                            </div>
+                        </div>
+
+                        <div class="col-lg-1"></div>
+
+
+
+                    </div><!-- .animated -->
+                </div><!-- .content -->
+
+            </div><!-- /#right-panel -->
+            <!-- Right Panel -->
+        </div>
+            }
+
+
+            <script src="~/assets/js/vendor/jquery-2.1.4.min.js"></script>
+            <script src="~/assets/js/popper.min.js"></script>
+            <script src="~/assets/js/plugins.js"></script>
+            <script src="~/assets/js/main.js"></script>
+
+    </body>
+</html>

@@ -1,0 +1,144 @@
+﻿@using Microsoft.AspNet.Identity
+@using System.Linq;
+@using AttendanceManagement.Models;
+
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_APLayout.cshtml";
+}
+
+@{
+    AttendanceManagementDBEntities1 db = new AttendanceManagementDBEntities1();
+
+    //       var userId = User.Identity.GetUserId();
+    //      var user = db.Teachers.FirstOrDefault(u => u.REFID == userId);
+    //        var department = db.Departments.FirstOrDefault(u => u.DID == user.Department_DID);
+}
+
+
+
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="">
+ <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>A M S - Admin Portal</title>
+    <meta name="description" content="Sufee Admin - HTML5 Admin Template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="apple-icon.png">
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <link rel="stylesheet" href="~/assets/css/normalize.css">
+    <link rel="stylesheet" href="~/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/assets/css/themify-icons.css">
+    <link rel="stylesheet" href="~/assets/css/flag-icon.min.css">
+    <link rel="stylesheet" href="~/assets/css/cs-skin-elastic.css">
+    <!-- <link rel="stylesheet" href="assets/css/bootstrap-select.less"> -->
+    <link rel="stylesheet" href="~/assets/scss/style.css">
+    <link href="~/assets/css/lib/vector-map/jqvmap.min.css" rel="stylesheet">
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
+
+</head>
+
+<body>
+
+
+    <div id="right-panel" class="right-panel">
+
+        <!-- Header-->
+        <header id="header" class="header">
+
+            <div class="header-menu">
+                <div class="col-sm-7">
+
+                    <h2 style="text-align: right;">  <img style="width: 7%; margin-right: 3% " src="~/assets/images/logos.png" /> Aikya Software Wing </h2>
+
+                </div>
+
+            </div>
+
+        </header><!-- /header -->
+        <!-- Header-->
+
+        <div class="breadcrumbs">
+            <div class="col-sm-4">
+                <div class="page-header float-left">
+                    <div class="page-title">
+                        <h1>Administrator Dashboard</h1>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+
+
+
+
+
+
+        <div class="content mt-3">
+            <div class="animated fadeIn">
+
+                <div class="col-lg-1"> </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <strong class="card-title mb-3">Profile Card</strong>
+                        </div>
+                        <div class="card-body">
+                            <div class="mx-auto d-block">
+                                <img class="rounded-circle mx-auto d-block" src="~/assets/images/admin.jpg" alt="Card image cap">
+                                <h5 class="text-sm-center mt-2 mb-1">Steven Lee</h5>
+                                <div class="location text-sm-center"><i class="fa fa-map-marker"></i> California, United States</div>
+                            </div>
+                            <hr>
+                            <div class="card-text text-sm-center">
+                                <a href="#"><i class="fa fa-facebook pr-1"></i></a>
+                                <a href="#"><i class="fa fa-twitter pr-1"></i></a>
+                                <a href="#"><i class="fa fa-linkedin pr-1"></i></a>
+                                <a href="#"><i class="fa fa-pinterest pr-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-1"></div>
+
+
+
+
+            </div>
+        </div>
+
+
+        <div class="col-lg-1"></div>
+
+
+
+
+
+    </div><!-- .animated -->
+
+
+
+
+</body>
+</html>
+
+
+
+
+

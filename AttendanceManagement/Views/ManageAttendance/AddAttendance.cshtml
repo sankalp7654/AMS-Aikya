@@ -1,0 +1,241 @@
+﻿@model AttendanceManagement.ViewModel.AttendanceViewModel
+
+@{
+    ViewBag.Title = "AddAttendance";
+    var Students = Model.Students;
+
+    Layout = "~/Views/Shared/_TPLayout.cshtml";
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Add Att.</title>
+
+    <link rel="stylesheet" href="~/css/bootstrap-4.0.0-dist/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="~/css/bootstrap-4.0.0-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/bootstrap-4.0.0-dist/css/bootstrap-reboot.css">
+
+    <link rel="stylesheet" href="~/css/bootstrap-4.0.0-dist/bootstrap-datepicker3.standalone.css">
+    <link rel="stylesheet" href="~/css/bootstrap-4.0.0-dist/bootstrap-datepicker.standalone.css">
+
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/fonts/iconic/css/material-design-iconic-font.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/vendor/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/vendor/css-hamburgers/hamburgers.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/vendor/animsition/css/animsition.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/vendor/daterangepicker/daterangepicker.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/css/util.css">
+    <link rel="stylesheet" type="text/css" href="~/css/main.css">
+    <!--===============================================================================================-->
+    <!-- Bootstrap Core CSS -->
+    <link href="~/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="~/fonts/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet"
+          type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+    <link href="~/vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="~/css/stylish-portfolio.min.css" rel="stylesheet">
+    <link href="~/css/manage_attendance.css" rel="stylesheet">
+
+    <!-- Plugin CSS -->
+    <link href="~/vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+    <!--Table requirements-->
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/vendor/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/vendor/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/vendor/perfect-scrollbar/perfect-scrollbar.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/util.css">
+    <link rel="stylesheet" type="text/css" href="~/table_main.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Bootstrap core CSS -->
+    <link href="~/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="~/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+    <!-- Plugin CSS -->
+    <link href="~/vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="~/css/creative.min.css" rel="stylesheet">
+    <link href="~/css/teachers_portal.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top" background="~/img/header.jpg">
+
+
+    @using (Html.BeginForm("AddAttendance", "ManageAttendance", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+
+
+        <!-- Header -->
+
+
+        <header class="d-flex">
+            <div class="container text-center my-auto">
+                <br>
+                <br>
+                <div class="row">
+                    <div class="col-lg-10 mx-auto">
+                        <h1 class="text-uppercase">
+                            <strong style="color: white">Upload Attendance</strong>
+                        </h1>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-lg-10 mx-auto text-center">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="#">@Html.DisplayFor(model => model.TeacherId)</a>
+                            </li>
+                            <li class="breadcrumb-item">
+                                <a href="#">@Html.DisplayFor(model => model.SubjectCode)</a>
+                            </li>
+                            <li class="breadcrumb-item">
+                                <a href="#">@Html.DisplayFor(model => model.Date)</a>
+                            </li>
+                            <li class="breadcrumb-item">
+                                <a href="#">@Html.DisplayFor(model => model.Slot)</a>
+                            </li>
+                            <!-- <li class="breadcrumb-item active">Html.DisplayNameFor(model => model.Slot)</li>-->
+                        </ol>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-10 mx-auto text-center">
+                        <div class="table100 ver2 m-b-40">
+                            <div class="table100-head">
+                                <table>
+                                    <thead>
+                                        <tr class="row100 head">
+                                            <th class="cell100 column1">USN</th>
+                                            <th class="cell100 column2"></th>
+                                            <th class="cell100 column3">Name</th>
+                                            <th class="cell100 column4"></th>
+                                            <th class="cell100 column5">Present</th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+
+                            <div class="table100-body js-pscroll">
+                                <table>
+
+                                    <tbody>
+
+                                        @for (int i = 0; i < Model.Students.Count(); i++)
+                                        {
+                                            <tr class="row100 body">
+                                                <td class="cell100 column1">
+                                                    @Html.DisplayFor(modelItem => modelItem.Students[i].USN)
+                                                </td>
+
+
+                                                <td class="cell100 column2">
+
+                                                <td class="cell100 column3">
+                                                    @Html.DisplayFor(modelItem => modelItem.Students[i].Name)
+                                                </td>
+                                                <td class="cell100 column4"></td>
+                                                <td class="cell100 column5">
+                                                    @Html.CheckBoxFor(model => model.IsPresent[i], new { @class = "form-check-input" })
+
+                                                </td>
+                                            </tr>
+                                        }
+
+
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-10 mx-auto text-center">
+                        <div class="container-login100-form-btn" style="padding-bottom: 5%">
+                            <button class="login100-form-btn" type="submit">
+                                Submit
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+
+
+
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded js-scroll-trigger" href="#page-top">
+            <i class="fa fa-angle-up"></i>
+        </a>
+    }
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="~/vendor/jquery/jquery.min.js"></script>
+    <script src="~/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="~/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="~/js/stylish-portfolio.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script src="~/vendor/jquery/jquery.min.js"></script>
+    <script src="~/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="~/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="~/vendor/scrollreveal/scrollreveal.min.js"></script>
+    <script src="~/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="~/js/creative.min.js"></script>
+
+</body>
+
+
+
+
+
+</html>

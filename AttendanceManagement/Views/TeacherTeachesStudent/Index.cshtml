@@ -1,0 +1,264 @@
+﻿
+@model AttendanceManagement.Models.CheckAttendanceModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_TPLayout.cshtml";
+}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Check Att.</title>
+
+    <link rel="stylesheet" href="~/css/bootstrap-4.0.0-dist/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="~/css/bootstrap-4.0.0-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/bootstrap-4.0.0-dist/css/bootstrap-reboot.css">
+
+    <link rel="stylesheet" href="~/css/bootstrap-4.0.0-dist/bootstrap-datepicker3.standalone.css">
+    <link rel="stylesheet" href="~/css/bootstrap-4.0.0-dist/bootstrap-datepicker.standalone.css">
+
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/fonts/iconic/css/material-design-iconic-font.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/vendor/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/vendor/css-hamburgers/hamburgers.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/vendor/animsition/css/animsition.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/vendor/daterangepicker/daterangepicker.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/css/util.css">
+    <link rel="stylesheet" type="text/css" href="~/css/main.css">
+    <!--===============================================================================================-->
+    <!-- Bootstrap Core CSS -->
+    <link href="~/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="~/fonts/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet"
+          type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+    <link href="~/vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="~/css/stylish-portfolio.min.css" rel="stylesheet">
+    <link href="~/css/manage_attendance.css" rel="stylesheet">
+
+    <!-- Plugin CSS -->
+    <link href="~/vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+    <!--Table requirements-->
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/vendor/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/vendor/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/vendor/perfect-scrollbar/perfect-scrollbar.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/util.css">
+    <link rel="stylesheet" type="text/css" href="~/table_main.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Bootstrap core CSS -->
+    <link href="~/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="~/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+    <!-- Plugin CSS -->
+    <link href="~/vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="~/css/creative.min.css" rel="stylesheet">
+    <link href="~/css/teachers_portal.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+    @using (Html.BeginForm("Index", "TeacherTeachesStudent"))
+    {
+        @Html.AntiForgeryToken()
+        <!-- Navigation -->
+
+
+        <!-- Header -->
+
+
+        <header class="d-flex">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="container text-center my-auto">
+                <br>
+                <br>
+                <br>
+                <div class="row">
+                    <div class="col-lg-12 mx-auto">
+                        <h1 class="text-uppercase">
+                            <strong style="color: white">Add Subject</strong>
+                        </h1>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="row">
+                    <div class="col-lg-4 mx-auto text-center">
+                        <fieldset>
+
+                            <div class="form-group">
+                                @Html.DropDownList("Department_DID", null, htmlAttributes: new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.Department_DID, "", new { @class = "text-danger" })
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 mx-auto text-center">
+                        <fieldset>
+
+                            <div class="form-group">
+                                @Html.DropDownList("Sem", null, htmlAttributes: new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.Sem, "", new { @class = "text-danger" })
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 mx-auto text-center">
+                        <fieldset>
+
+                            <div class="form-group">
+                                @Html.DropDownList("Section", null, htmlAttributes: new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.Section, "", new { @class = "text-danger" })
+                            </div>
+
+                        </fieldset>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class=" col-lg-4 mx-auto text-center">
+
+                        <div class=" form-group">
+                            @Html.TextBoxFor(model => model.Date, "{dd/MM/yyyy}", new { @class = "form-control", name = "date", id = "datepicker", placeholder = "DATE : DD/MM/YYYY" })
+                        </div>
+
+                        @Html.ValidationMessageFor(model => model.Date, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 mx-auto text-center">
+                        <fieldset>
+
+                            <div class="form-group">
+                                @Html.DropDownList("Slot", new List<SelectListItem>{
+                                                                                            new SelectListItem { Text = "S1", Value = "S1", Selected = true},
+                                                                                            new SelectListItem { Text = "S2", Value = "S2" },
+                                                                                            new SelectListItem { Text = "S3", Value = "S3" },
+                                                                                            new SelectListItem { Text = "S4", Value = "S4" },
+                                                                                            new SelectListItem { Text = "S5", Value = "S5" },
+                                                                                            new SelectListItem { Text = "S6", Value = "S6" },
+                                                                                            new SelectListItem { Text = "S7", Value = "S7" },
+                                                                                            new SelectListItem { Text = "L1", Value = "L1" },
+                                                                                            new SelectListItem { Text = "L2", Value = "L2" },
+                                                                                            }, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.Slot, "", new { @class = "text-danger" })
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+                <br>
+                <div class="row" style="padding-bottom: 5%">
+                    <div class="col-lg-4">
+
+                    </div>
+                    <div class="col-lg-2 text-center" style="padding-bottom: 5%">
+
+                        <div class="container-login100-form-btn">
+                            <button class="login100-form-btn" type="submit">
+                                Submit
+                            </button>
+                        </div>
+                    </div>
+                    <br>
+
+
+                    <div class="col-lg-4">
+
+                    </div>
+                </div>
+            </div>
+        </header>
+
+
+
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded js-scroll-trigger" href="#page-top">
+            <i class="fa fa-angle-up"></i>
+        </a>
+    }
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="~/vendor/jquery/jquery.min.js"></script>
+    <script src="~/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="~/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="~/js/stylish-portfolio.min.js"></script>
+    <script src="~/js/manage_attendance.js"></script>
+
+    <script src="~/js/creative.min.js"></script>
+
+    <!--===============================================================================================-->
+    <script src="~/vendor/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/vendor/animsition/js/animsition.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/vendor/bootstrap/js/popper.js"></script>
+    <script src="~/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/vendor/select2/select2.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/vendor/daterangepicker/moment.min.js"></script>
+    <script src="~/vendor/daterangepicker/daterangepicker.js"></script>
+    <script src="~/css/bootstrap-4.0.0-dist/bootstrap-datepicker.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/vendor/countdowntime/countdowntime.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/js/main.js"></script>
+
+    <script src="~/css/bootstrap-4.0.0-dist/bootstrap-datepicker.js"></script>
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
+
+
+
+
+
+</body>
+
+</html>
