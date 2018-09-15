@@ -277,6 +277,7 @@
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\CheckAttendanceModel.cs" />
+    <Compile Include="Models\TeacherTeachesStudentModel.cs" />
     <Compile Include="Models\ManageAttendanceModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Student.cs">

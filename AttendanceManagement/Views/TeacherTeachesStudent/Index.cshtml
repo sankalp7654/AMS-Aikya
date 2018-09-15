@@ -1,5 +1,5 @@
 ﻿
-@model AttendanceManagement.Models.CheckAttendanceModel
+@model AttendanceManagement.Models.TeacherTeachesStudentModel
 
 @{
     ViewBag.Title = "Index";
@@ -121,6 +121,19 @@
                 </div>
                 <br>
                 <br>
+
+                <div class="row">
+                    <div class="col-lg-4 mx-auto text-center">
+                        <fieldset>
+
+                            <div class="form-group">
+                                @Html.DropDownList("Sub_Code", null, htmlAttributes: new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.Sub_Code, "", new { @class = "text-danger" })
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+
                 <div class="row">
                     <div class="col-lg-4 mx-auto text-center">
                         <fieldset>
@@ -155,38 +168,7 @@
                         </fieldset>
                     </div>
                 </div>
-                <div class="row">
-                    <div class=" col-lg-4 mx-auto text-center">
 
-                        <div class=" form-group">
-                            @Html.TextBoxFor(model => model.Date, "{dd/MM/yyyy}", new { @class = "form-control", name = "date", id = "datepicker", placeholder = "DATE : DD/MM/YYYY" })
-                        </div>
-
-                        @Html.ValidationMessageFor(model => model.Date, "", new { @class = "text-danger" })
-
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-4 mx-auto text-center">
-                        <fieldset>
-
-                            <div class="form-group">
-                                @Html.DropDownList("Slot", new List<SelectListItem>{
-                                                                                            new SelectListItem { Text = "S1", Value = "S1", Selected = true},
-                                                                                            new SelectListItem { Text = "S2", Value = "S2" },
-                                                                                            new SelectListItem { Text = "S3", Value = "S3" },
-                                                                                            new SelectListItem { Text = "S4", Value = "S4" },
-                                                                                            new SelectListItem { Text = "S5", Value = "S5" },
-                                                                                            new SelectListItem { Text = "S6", Value = "S6" },
-                                                                                            new SelectListItem { Text = "S7", Value = "S7" },
-                                                                                            new SelectListItem { Text = "L1", Value = "L1" },
-                                                                                            new SelectListItem { Text = "L2", Value = "L2" },
-                                                                                            }, new { @class = "form-control" })
-                                @Html.ValidationMessageFor(model => model.Slot, "", new { @class = "text-danger" })
-                            </div>
-                        </fieldset>
-                    </div>
-                </div>
                 <br>
                 <div class="row" style="padding-bottom: 5%">
                     <div class="col-lg-4">
