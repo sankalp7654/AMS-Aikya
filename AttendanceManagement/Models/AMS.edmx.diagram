@@ -4,32 +4,34 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="fd38062d8a804e12a6dfcdba4047ecae" Name="Diagram1">
-        <EntityTypeShape EntityType="AttendanceManagementDBModel.C__MigrationHistory" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AttendanceManagementDBModel.AspNetRole" Width="1.5" PointX="1.5" PointY="13.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AttendanceManagementDBModel.AspNetUserClaim" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="AttendanceManagementDBModel.AspNetUserLogin" Width="1.5" PointX="3" PointY="17" IsExpanded="true" />
-        <EntityTypeShape EntityType="AttendanceManagementDBModel.AspNetUser" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="AttendanceManagementDBModel.Attendance" Width="1.5" PointX="7.5" PointY="7.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="AttendanceManagementDBModel.Department" Width="1.5" PointX="0.75" PointY="6.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="AttendanceManagementDBModel.Student" Width="1.5" PointX="5.25" PointY="8" IsExpanded="true" />
-        <EntityTypeShape EntityType="AttendanceManagementDBModel.Subject" Width="1.5" PointX="3" PointY="10.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="AttendanceManagementDBModel.Teacher" Width="1.5" PointX="3" PointY="6.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="AttendanceManagementDBModel.Teacher_Teaches_Student" Width="1.5" PointX="10.5" PointY="8.25" IsExpanded="true" />
+      <Diagram DiagramId="b309202167ef4d5fbf7c8f72e43c29c7" Name="Diagram1" ZoomLevel="88">
+        <EntityTypeShape EntityType="AttendanceManagementDBModel.C__MigrationHistory" Width="1.5" PointX="8.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AttendanceManagementDBModel.AspNetRole" Width="1.5" PointX="1.5" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AttendanceManagementDBModel.AspNetUserClaim" Width="1.5" PointX="6" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AttendanceManagementDBModel.AspNetUserLogin" Width="1.5" PointX="6" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AttendanceManagementDBModel.AspNetUser" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AttendanceManagementDBModel.Attendance" Width="1.5" PointX="5.25" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AttendanceManagementDBModel.Department" Width="1.5" PointX="0.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AttendanceManagementDBModel.Student" Width="1.5" PointX="3" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AttendanceManagementDBModel.Student_Studies_Subject" Width="1.5" PointX="5.25" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AttendanceManagementDBModel.Subject" Width="1.5" PointX="3" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AttendanceManagementDBModel.sysdiagram" Width="1.5" PointX="8.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AttendanceManagementDBModel.Teacher" Width="1.5" PointX="6" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AttendanceManagementDBModel.Teacher_Teaches_Student" Width="1.5" PointX="8.25" PointY="9.5" IsExpanded="true" />
         <AssociationConnector Association="AttendanceManagementDBModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
         <AssociationConnector Association="AttendanceManagementDBModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
-        <AssociationConnector Association="AttendanceManagementDBModel.FK__Teacher__REFID__30F848ED" ManuallyRouted="false" />
-        <AssociationConnector Association="AttendanceManagementDBModel.FK__Attendanc__Stude__2A4B4B5E" ManuallyRouted="false" />
-        <AssociationConnector Association="AttendanceManagementDBModel.FK__Attendanc__Subje__2B3F6F97" ManuallyRouted="false" />
-        <AssociationConnector Association="AttendanceManagementDBModel.FK__Attendanc__Teach__2C3393D0" ManuallyRouted="false" />
-        <AssociationConnector Association="AttendanceManagementDBModel.FK__Student__Departm__2D27B809" ManuallyRouted="false" />
-        <AssociationConnector Association="AttendanceManagementDBModel.FK__Subject__Departm__2F10007B" ManuallyRouted="false" />
-        <AssociationConnector Association="AttendanceManagementDBModel.FK__Teacher__Departm__300424B4" ManuallyRouted="false" />
-        <AssociationConnector Association="AttendanceManagementDBModel.FK__Student__Subject__2E1BDC42" ManuallyRouted="false" />
-        <AssociationConnector Association="AttendanceManagementDBModel.FK__Teacher_T__Stude__31EC6D26" ManuallyRouted="false" />
-        <AssociationConnector Association="AttendanceManagementDBModel.FK__Teacher_T__Subje__32E0915F" ManuallyRouted="false" />
-        <AssociationConnector Association="AttendanceManagementDBModel.FK__Teacher_T__Teach__33D4B598" ManuallyRouted="false" />
+        <AssociationConnector Association="AttendanceManagementDBModel.FK__Teacher__REFID__3C69FB99" ManuallyRouted="false" />
+        <AssociationConnector Association="AttendanceManagementDBModel.FK__Attendanc__Subje__5165187F" ManuallyRouted="false" />
+        <AssociationConnector Association="AttendanceManagementDBModel.FK__Attendanc__Teach__5070F446" ManuallyRouted="false" />
+        <AssociationConnector Association="AttendanceManagementDBModel.FK__Student__Departm__0F975522" ManuallyRouted="false" />
+        <AssociationConnector Association="AttendanceManagementDBModel.FK__Subject__Departm__09DE7BCC" ManuallyRouted="false" />
+        <AssociationConnector Association="AttendanceManagementDBModel.FK__Teacher__Departm__0519C6AF" ManuallyRouted="false" />
+        <AssociationConnector Association="AttendanceManagementDBModel.FK__Student_Stu__USN__68487DD7" ManuallyRouted="false" />
+        <AssociationConnector Association="AttendanceManagementDBModel.FK__Student_S__SubCo__693CA210" ManuallyRouted="false" />
+        <AssociationConnector Association="AttendanceManagementDBModel.FK__Teacher_T__Subje__1B0907CE" ManuallyRouted="false" />
+        <AssociationConnector Association="AttendanceManagementDBModel.FK__Teacher_T__Teach__1CF15040" ManuallyRouted="false" />
         <AssociationConnector Association="AttendanceManagementDBModel.AspNetUserRoles" ManuallyRouted="false" />
+        <AssociationConnector Association="AttendanceManagementDBModel.FK__Attendanc__Stude__6E01572D" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -12,18 +12,14 @@ namespace AttendanceManagement.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Attendance
+    public partial class Student_Studies_Subject
     {
         public int Id { get; set; }
-        public string Student_USN { get; set; }
-        public string Teacher_TID { get; set; }
-        public string Subject_SubCode { get; set; }
-        public string Slot { get; set; }
-        public int IsPresent { get; set; }
-        public string Date { get; set; }
+        public string USN { get; set; }
+        public string SubCode { get; set; }
     
-        public virtual Subject Subject { get; set; }
-        public virtual Teacher Teacher { get; set; }
         public virtual Student Student { get; set; }
+        public virtual Subject Subject { get; set; }
+        public List<Student_Studies_Subject> sss { get; set; }
     }
 }

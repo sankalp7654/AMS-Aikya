@@ -277,18 +277,24 @@
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\CheckAttendanceModel.cs" />
-    <Compile Include="Models\TeacherTeachesStudentModel.cs" />
-    <Compile Include="Models\ManageAttendanceModel.cs" />
-    <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Student.cs">
+      <DependentUpon>AMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Student_Studies_Subject.cs">
       <DependentUpon>AMS.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Subject.cs">
       <DependentUpon>AMS.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\sysdiagram.cs">
+      <DependentUpon>AMS.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Teacher.cs">
       <DependentUpon>AMS.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\TeacherTeachesStudentModel.cs" />
+    <Compile Include="Models\ManageAttendanceModel.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Teacher_Teaches_Student.cs">
       <DependentUpon>AMS.tt</DependentUpon>
     </Compile>

@@ -15,5 +15,6 @@ namespace AttendanceManagement.Models
         public string Section { get; set; }
         public string Sub_Code { get; set; }
         public List<Student> Students { get; set; }
+
     }
 }

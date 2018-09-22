@@ -117,6 +117,36 @@ namespace AttendanceManagement.Controllers
         public ActionResult DeleteConfirmed(string id)
         {
             Teacher teacher = db.Teachers.Find(id);
+            Teacher_Teaches_Student teacher_teaches_student = new Teacher_Teaches_Student();
+            
+
+            var subjects_taught_by_teacher = db.Teacher_Teaches_Student.Where(u => u.Teacher_TID == id).Select(u=>u.Subject_SubCode).ToList();
+            var uniqueSubjects = new HashSet<String>(subjects_taught_by_teacher).ToList() ;
+
+            for (int i = 0; i < uniqueSubjects.Count; i++)
+            {
+                var subject = uniqueSubjects[i];
+                var student = db.Student_Studies_Subject.Where(u => u.SubCode == subject).ToList();
+                for(int j=0; j<student.Count; j++)
+                {
+                    db.Student_Studies_Subject.Remove(student[j]);
+                }
+            }
+
+
+
+
+            // Removes all the students that are taught by the Teacher with given Teacher Id i.e. id
+
+            var TTS = db.Teacher_Teaches_Student.Where(u => u.Teacher_TID == id).ToList();
+            for (int i = 0; i < TTS.Count(); i++)
+            {
+                db.Teacher_Teaches_Student.Remove(TTS[i]);
+            }
+
+
+
+
             db.Teachers.Remove(teacher);
             db.SaveChanges();
             return RedirectToAction("Index");

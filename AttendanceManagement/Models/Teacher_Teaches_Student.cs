@@ -18,7 +18,6 @@ namespace AttendanceManagement.Models
         public string Student_USN { get; set; }
         public string Teacher_TID { get; set; }
     
-        public virtual Student Student { get; set; }
         public virtual Subject Subject { get; set; }
         public virtual Teacher Teacher { get; set; }
     }

@@ -18,7 +18,7 @@ namespace AttendanceManagement.Models
         public Subject()
         {
             this.Attendances = new HashSet<Attendance>();
-            this.Students = new HashSet<Student>();
+            this.Student_Studies_Subject = new HashSet<Student_Studies_Subject>();
             this.Teacher_Teaches_Student = new HashSet<Teacher_Teaches_Student>();
         }
     
@@ -30,7 +30,7 @@ namespace AttendanceManagement.Models
         public virtual ICollection<Attendance> Attendances { get; set; }
         public virtual Department Department { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Student> Students { get; set; }
+        public virtual ICollection<Student_Studies_Subject> Student_Studies_Subject { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Teacher_Teaches_Student> Teacher_Teaches_Student { get; set; }
     }

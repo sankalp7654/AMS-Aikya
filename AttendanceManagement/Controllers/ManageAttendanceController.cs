@@ -57,11 +57,13 @@ namespace AttendanceManagement.Controllers
             var teacher = db.Teachers.FirstOrDefault(u => u.REFID == customer.Id);
             
             attendanceViewModel.TeacherId = teacher.TID;
+            //Changes are made
+            /*var teacherList = db.Teacher_Teaches_Student.Where(u => u.Teacher_TID == teacher.TID).ToList();
+            var subject = teacherList.Where(s => s.Student_USN == students[0].USN).FirstOrDefault();*/
+            string usn = students[0].USN;
+            var tts = db.Teacher_Teaches_Student.Where(u => u.Teacher_TID == teacher.TID).FirstOrDefault(u => u.Student_USN == usn);
 
-            var teacherList = db.Teacher_Teaches_Student.Where(u => u.Teacher_TID == teacher.TID).ToList();
-            var subject = teacherList.Where(s => s.Student_USN == students[0].USN).FirstOrDefault();
-
-            attendanceViewModel.SubjectCode = subject.Subject_SubCode;
+            attendanceViewModel.SubjectCode = tts.Subject_SubCode;
             return View(attendanceViewModel);
         }
 

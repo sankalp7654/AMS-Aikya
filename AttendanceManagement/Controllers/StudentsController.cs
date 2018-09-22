@@ -13,11 +13,15 @@ namespace AttendanceManagement.Controllers
     public class StudentsController : Controller
     {
         private AttendanceManagementDBEntities1 db = new AttendanceManagementDBEntities1();
+        private static Student_Studies_Subject student_studies_subject = new Student_Studies_Subject();
 
         // GET: Students
         public ActionResult Index()
         {
-            var students = db.Students.Include(s => s.Department).Include(s => s.Subject);
+
+            //    var students = db.Students.Include(s => s.Department).Include(s => s.Subject);
+            var students = db.Students.Include(s => s.Department);
+
             return View(students.ToList());
         }
 
@@ -49,7 +53,7 @@ namespace AttendanceManagement.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "USN,Name,Section,Sem,Department_DID,Subject_SubCode")] Student student)
+        public ActionResult Create([Bind(Include = "USN,Name,Section,Sem,Department_DID")] Student student)
         {
             if (ModelState.IsValid)
             {
@@ -59,44 +63,11 @@ namespace AttendanceManagement.Controllers
             }
 
             ViewBag.Department_DID = new SelectList(db.Departments, "DID", "Name", student.Department_DID);
-            ViewBag.Subject_SubCode = new SelectList(db.Subjects, "SubCode", "Name", student.Subject_SubCode);
+
+           
             return View(student);
         }
 
-        // GET: Students/Edit/5
-        public ActionResult Edit(string id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Student student = db.Students.Find(id);
-            if (student == null)
-            {
-                return HttpNotFound();
-            }
-            ViewBag.Department_DID = new SelectList(db.Departments, "DID", "Name", student.Department_DID);
-            ViewBag.Subject_SubCode = new SelectList(db.Subjects, "SubCode", "Name", student.Subject_SubCode);
-            return View(student);
-        }
-
-        // POST: Students/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "USN,Name,Section,Sem,Department_DID,Subject_SubCode")] Student student)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(student).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            ViewBag.Department_DID = new SelectList(db.Departments, "DID", "Name", student.Department_DID);
-            ViewBag.Subject_SubCode = new SelectList(db.Subjects, "SubCode", "Name", student.Subject_SubCode);
-            return View(student);
-        }
 
         // GET: Students/Delete/5
         public ActionResult Delete(string id)
@@ -106,6 +77,8 @@ namespace AttendanceManagement.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Student student = db.Students.Find(id);
+
+
             if (student == null)
             {
                 return HttpNotFound();
@@ -118,7 +91,14 @@ namespace AttendanceManagement.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)
         {
-            Student student = db.Students.Find(id);
+            Student student = db.Students.FirstOrDefault(u => u.USN == id);
+
+            var sss = db.Student_Studies_Subject.Where(u => u.USN == id).ToList();
+            student_studies_subject.sss = sss;
+
+            for (int i = 0; i < sss.Count; i++)
+                db.Student_Studies_Subject.Remove(sss[i]);
+
             db.Students.Remove(student);
             db.SaveChanges();
             return RedirectToAction("Index");

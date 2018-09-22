@@ -97,14 +97,14 @@ namespace AttendanceManagement.Controllers
                     {
                         try
                         {
-                            if (a.USN != "" && a.Name != "" && a.Section != null && a.Sem != 0 && a.Department_DID != null && a.Subject_SubCode != null)
+                            if (a.USN != "" && a.Name != "" && a.Section != null && a.Sem != 0 && a.Department_DID != null)
                             {
                                 Student TU = new Student();
                                 TU.Name = a.Name;
                                 TU.USN = a.USN;
                                 TU.Sem = a.Sem;
                                 TU.Department_DID = a.Department_DID;
-                                TU.Subject_SubCode = a.Subject_SubCode;
+                               // TU.Subject_SubCode = a.Subject_SubCode;
                                 db.Students.Add(TU);
                                 db.SaveChanges();
                             }
@@ -116,7 +116,8 @@ namespace AttendanceManagement.Controllers
                                 if (a.Sem == 0) data.Add("<li>Sem is required</li>");
                                 if (a.Section == "" || a.Section == "" ) data.Add("<li>Section is required</li>");
                                 if (a.Department_DID == "" || a.Department_DID == "") data.Add("<li>Department_DID is required</li>");
-                                if (a.Subject_SubCode == "" || a.Subject_SubCode == "") data.Add("<li>Subject SubCode is required</li>");
+                                //
+                              //  if (a.Subject_SubCode == "" || a.Subject_SubCode == "") data.Add("<li>Subject SubCode is required</li>");
 
                                 data.Add("</ul>");
                                 data.ToArray();

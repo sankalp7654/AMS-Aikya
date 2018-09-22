@@ -88,7 +88,6 @@
                                             <th>Section</th>
                                             <th>Semester</th>
                                             <th>Department Name</th>
-                                            <th>Subject Code</th>
                                             <th>Delete Tuple</th>
 
                                         </tr>
@@ -113,9 +112,6 @@
                                                     </td>
                                                     <td>
                                                         @Html.DisplayFor(modelItem => item.Department.Name)
-                                                    </td>
-                                                    <td>
-                                                        @Html.DisplayFor(modelItem => item.Subject.Name)
                                                     </td>
                                                     <td>
                                                         @Html.ActionLink("Delete", "Delete", new { id = item.USN })

@@ -83,6 +83,7 @@
                                         <tr>
                                             <th>Subject Code</th>
                                             <th>Subject Name</th>
+                                            <th>Associated Department</th>
                                             <th>Delete Tuple</th>
 
                                         </tr>
@@ -92,18 +93,21 @@
 
                                         @foreach (var item in Model)
     {
-                                    <tr>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.Name)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.Department.Name)
-                                        </td>
-                                        <td>
-                                            
-                                            @Html.ActionLink("Delete", "Delete", new { id = item.SubCode })
-                                        </td>
-                                    </tr>
+                                        <tr>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.SubCode)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Name)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Department.Name)
+                                            </td>
+                                            <td>
+
+                                                @Html.ActionLink("Delete", "Delete", new { id = item.SubCode })
+                                            </td>
+                                        </tr>
 }
 
                                     </tbody>

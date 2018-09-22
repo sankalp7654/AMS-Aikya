@@ -44,14 +44,18 @@ namespace AttendanceManagement.Controllers
 
 
 
-            classViewModel.Students = db.Students.Where(u => u.Section == classViewModel.Section).Where(u => u.Sem == classViewModel.Sem).Where(u => u.Department_DID == classViewModel.Department_DID).Where(u => u.Subject_SubCode == classViewModel.Sub_Code).ToList();
+            classViewModel.Students = db.Students.Where(u => u.Section == classViewModel.Section).Where(u => u.Sem == classViewModel.Sem).Where(u => u.Department_DID == classViewModel.Department_DID).ToList();
             for (int i = 0; i < classViewModel.Students.Count; i++)
             {
+                Student_Studies_Subject student_studies_subject = new Student_Studies_Subject();
                 Teacher_Teaches_Student teacherTeachesStudent = new Teacher_Teaches_Student();
                 teacherTeachesStudent.Teacher_TID = teacher.TID;
                 teacherTeachesStudent.Subject_SubCode = classViewModel.Sub_Code;
                 teacherTeachesStudent.Student_USN = classViewModel.Students[i].USN;
+                student_studies_subject.SubCode = classViewModel.Sub_Code;
+                student_studies_subject.USN = classViewModel.Students[i].USN;
                 db.Teacher_Teaches_Student.Add(teacherTeachesStudent);
+                db.Student_Studies_Subject.Add(student_studies_subject);
                 db.SaveChanges();
 
             }
