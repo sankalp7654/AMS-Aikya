@@ -8,6 +8,7 @@ namespace AttendanceManagement.Controllers
 {
     public class AdminPortalController : Controller
     {
+    
         // GET: AdminPortal
         public ActionResult Index()
         {
