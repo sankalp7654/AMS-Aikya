@@ -7,6 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+
 namespace AttendanceManagement.Models
 {
     using System;
