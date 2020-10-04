@@ -1,3 +1,3 @@
 # AMS-FINAL
 
-Attendance Management System for college!
+Attendance Management System is developed for college!
